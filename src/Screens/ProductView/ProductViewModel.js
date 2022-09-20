@@ -9,26 +9,15 @@ export default function ProductListViewModel() {
     async function getProducts() {
 
         const {result} = await GetProductsUseCase();
-        console.log(result)
-        
-        // dispatch(getCurrentCart(result))
-
         dispatch(saveCart(result))
-        
-        
     }
 
     const updateStatsInc = (item) =>  {
         dispatch(addQty(item))
-        // alert(JSON.stringify(item))
     }
     const updateReduceStatsInc = (item) =>  {
         dispatch(ReduceQty(item))
-        // alert(JSON.stringify(item))
     }
-
-
-    
 
     return {
         getProducts,
