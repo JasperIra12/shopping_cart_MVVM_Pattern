@@ -1,7 +1,16 @@
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const CustomButton = ({item,label,action}) => {
+type CustomButtonProps = {
+  action:any,
+  item: {
+    qty: number
+  },
+  label: string
+}
+
+const CustomButton = ({item,label,action}:CustomButtonProps) => {
   return (
     <TouchableOpacity 
     disabled={label == '-' && item.qty < 1 ? true : false}
@@ -10,6 +19,14 @@ const CustomButton = ({item,label,action}) => {
         <Text>{label}</Text>
     </TouchableOpacity>
   )
+}
+
+CustomButton.propTypes = {
+  action: PropTypes.any,
+  item: PropTypes.shape({
+    qty: PropTypes.number
+  }),
+  label: PropTypes.string
 }
 
 export default CustomButton

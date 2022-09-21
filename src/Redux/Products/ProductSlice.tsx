@@ -1,7 +1,14 @@
 import { createSlice, } from '@reduxjs/toolkit';
+import PropTypes from 'prop-types'
+
+type ProductTypes = {
+  id:number,
+  prodName:string,
+  qty:number
+}
 
 const initialState = {
-  productCart: []
+  productCart: [] as any
 };
 
 const product = createSlice({
@@ -13,10 +20,10 @@ const product = createSlice({
       state.productCart = action.payload;
     },
     addQty: (state, action) => {
-      const data = state.productCart.find((item) => item.id === action.payload);
+      const data = state.productCart.find((item:ProductTypes ) => item.id === action.payload);
 
       if (data) {
-        const updateQty = state.productCart.map((item) =>
+        const updateQty = state.productCart.map((item:ProductTypes) =>
           item.id === action.payload
             ? {
               ...item,
@@ -29,9 +36,9 @@ const product = createSlice({
     },
 
     ReduceQty: (state, action) => {
-      const data = state.productCart.find((item) => item.id === action.payload);
+      const data = state.productCart.find((item: { id: any; }) => item.id === action.payload);
       if (data) {
-        const updateQty = state.productCart.map((item) =>
+        const updateQty = state.productCart.map((item: { id: any; qty: number; }) =>
           item.id === action.payload
             ? {
               ...item,

@@ -2,6 +2,13 @@ import { StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import React,{useEffect} from 'react'
 import productModel from './ProductViewModel'
 import CustomButton from '../../Components/CustomButton'
+
+type ProductTypes = {
+  id?:number,
+  prodName:string,
+  qty:number
+}
+
 const ProductList = () => {
     const {getProducts, all_cart,updateStatsInc, updateReduceStatsInc} = productModel()
     console.log(all_cart)
@@ -15,7 +22,7 @@ const ProductList = () => {
         padding:20,
         marginTop:30
     }}>
-        {all_cart.map((item,i) => {
+        {all_cart.map((item:ProductTypes,i:number) => {
             return (
               <View key={i} style={styles.list}>
                     <View key={i}>
