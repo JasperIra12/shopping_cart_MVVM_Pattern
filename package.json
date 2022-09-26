@@ -26,5 +26,19 @@
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": true,
+  "description": "reusable shoppingcart",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasperIra12/shopping_cart_MVVM_Pattern.git"
+  },
+  "author": "JasperC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JasperIra12/shopping_cart_MVVM_Pattern/issues"
+  },
+  "homepage": "https://github.com/JasperIra12/shopping_cart_MVVM_Pattern#readme",
+  "engines": {
+    "node": ">= 9.0.0"
+  }
 }

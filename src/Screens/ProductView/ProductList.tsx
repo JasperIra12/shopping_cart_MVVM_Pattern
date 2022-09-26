@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import React,{useEffect} from 'react'
 import productModel from './ProductViewModel'
-import CustomButton from '../../Components/CustomButton'
+import CustomButton from '../../Components/common/Button/CustomButton'
 
 type ProductTypes = {
   id?:number,
