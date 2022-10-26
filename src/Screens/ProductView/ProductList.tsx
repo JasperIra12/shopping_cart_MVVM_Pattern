@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import React,{useEffect} from 'react'
 import productModel from './ProductViewModel'
 import CustomButton from '../../Components/common/Button/CustomButton'
-
+import CartItem from '../../Components/common/Parent_component/CartItem'
 type ProductTypes = {
   id?:number,
   prodName:string,
@@ -22,7 +22,12 @@ const ProductList = () => {
         padding:20,
         marginTop:30
     }}>
-        {all_cart.map((item:ProductTypes,i:number) => {
+      <CartItem
+      data = {all_cart}
+      addQty ={updateReduceStatsInc}
+      removeQty={updateStatsInc}
+      />
+        {/* {all_cart.map((item:ProductTypes,i:number) => {
             return (
               <View key={i} style={styles.list}>
                     <View key={i}>
@@ -36,7 +41,7 @@ const ProductList = () => {
                 </View>
               </View>
             )
-        })}
+        })} */}
       
     </View>
   )
@@ -44,22 +49,4 @@ const ProductList = () => {
 
 export default ProductList
 
-const styles = StyleSheet.create({
-    list:{
-        borderBottomWidth:2,
-        marginBottom:10,
-        flexDirection:"row"
-      },
-      sample:{
-        flexDirection: "row",
-        justifyContent:"space-between",
-        padding:5,
-      },
-      itemqty:{
-        flex:1,
-        flexDirection:"row",
-        justifyContent:'flex-end',
-        
-      },
-     
-})
+const styles = StyleSheet.create({})
